@@ -1,29 +1,32 @@
 # dom-parser
 
-Fast dom parser based on regexps
+Parser DOM basado en expresiones regulares adaptado a Velneo basado en
+[@ershov-konst/dom-parser](https://github.com/ershov-konst/dom-parser)
 
-## installation
+## Instalación
 
-    npm install dom-parser
+    Importar el fichero dom-parser.js en los scripts de un proyecto.
 
-## usage
+## Uso
 
-    var DomParser = require('dom-parser');
+    #import (CurrentProject)/DomParser.js #TEST_DAT
+
+    var html = '<html><body><h1 id="titulo">DomParser</h1><p>Párrafo 1</p><p>Párrafo 2</p></body></html>';
+
     var parser = new DomParser();
+    var dom = parser.parseFromString(html);
 
-    fs.readFile('htmlToParse.html', 'utf8', function(err, html){
-      if (!err){
-        var dom = parser.parseFromString(html);
-
-        console.log(dom.getElementById('myElement').innerHTML);
-      }
-    })
+    alert(dom.getElementById('titulo').innerHTML);
+    var p = dom.getElementsByTag('p');
+    for(var i in p){
+        alert(p[i].innerHTML);
+    }
 
 ## API
 
 ##### Dom
 
-Implemented methods:
+Métodos implementados:
 
 * getElementById
 * getElementsByClassName
@@ -32,7 +35,7 @@ Implemented methods:
 
 ##### Node
 
-Implemented properties
+Propiedades implementadas:
 
 * nodeType
 * nodeName
@@ -45,7 +48,7 @@ Implemented properties
 * outerHTML
 * textContent
 
-Implemented methods
+Métodos implementados:
 
 * getAttribute
 * getElementById
@@ -53,9 +56,14 @@ Implemented methods
 * getElementsByTagName
 * getElementsByName
 
-Usage - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+Uso - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 
 
 ## contributing
 
 issues and pull requests are welcome!
+
+## Credits
+
+Basado en https://github.com/ershov-konst/dom-parser
+This is forked from [@ershov-konst/dom-parser](https://github.com/ershov-konst/dom-parser).
