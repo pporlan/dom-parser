@@ -1,11 +1,11 @@
 # dom-parser
 
-Parser DOM basado en expresiones regulares adaptado a Velneo basado en
+Parser DOM de expresiones regulares adaptado a Velneo, basado en
 [@ershov-konst/dom-parser](https://github.com/ershov-konst/dom-parser)
 
 ## Instalación
 
-    Importar el fichero dom-parser.js en los scripts de un proyecto.
+Importar el fichero dom-parser.js en los scripts de un proyecto.
 
 ## Uso
 
@@ -17,7 +17,7 @@ Parser DOM basado en expresiones regulares adaptado a Velneo basado en
     var dom = parser.parseFromString(html);
 
     alert(dom.getElementById('titulo').innerHTML);
-    var p = dom.getElementsByTag('p');
+    var p = dom.getElementsByTagName('p');
     for(var i in p){
         alert(p[i].innerHTML);
     }
@@ -66,4 +66,5 @@ issues and pull requests are welcome!
 ## Credits
 
 Basado en https://github.com/ershov-konst/dom-parser
+
 This is forked from [@ershov-konst/dom-parser](https://github.com/ershov-konst/dom-parser).
